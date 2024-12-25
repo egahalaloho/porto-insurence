@@ -17,9 +17,9 @@ return new class extends Migration
                 $table->string('username')->unique();
                 $table->string('email')->unique();
                 $table->string('password');
-                $table->string('old_password');
+                $table->string('old_password')->nullable();
                 $table->timestamp('created_at')->useCurrent();
-                $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
+                $table->timestamp('updated_at')->nullable()->useCurrentOnUpdate();
             });
         }
     }
